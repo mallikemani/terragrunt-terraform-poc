@@ -1,0 +1,28 @@
+# Terraform working directories
+**/.terraform/*
+
+# Terragrunt cache
+**/.terragrunt-cache/*
+
+# Terraform state
+*.tfstate
+*.tfstate.*
+
+# Terraform plan files
+*.tfplan
+tfplan
+
+# Local variable files
+*.tfvars
+!*.tfvars.example
+
+# Terraform crash logs
+crash.log
+crash.*.log
+
+# CLI configuration
+.terraformrc
+terraform.rc
+
+# macOS
+.DS_Store

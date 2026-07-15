@@ -1,0 +1,4 @@
+subscription_id    = "replace-with-an-azure-subscription-id"
+resource_group_name = "rg-terragrunt-poc-dev-eastus"
+location            = "eastus"
+environment         = "dev"
