@@ -37,3 +37,31 @@ variable "common_tags" {
     project    = "terragrunt-terraform-poc"
   }
 }
+
+variable "virtual_network_name" {
+  description = "Name of the Azure virtual network."
+  type        = string
+}
+
+variable "virtual_network_address_space" {
+  description = "Address spaces assigned to the virtual network."
+  type        = list(string)
+
+  validation {
+    condition     = length(var.virtual_network_address_space) > 0
+    error_message = "At least one virtual network address space must be supplied."
+  }
+}
+
+variable "subnets" {
+  description = "Subnets that should be created inside the virtual network."
+
+  type = map(object({
+    address_prefixes = list(string)
+  }))
+
+  validation {
+    condition     = length(var.subnets) > 0
+    error_message = "At least one subnet must be supplied."
+  }
+}
