@@ -52,9 +52,9 @@ resource "azurerm_storage_account" "this" {
     }
   }
 
-  lifecycle {
-    prevent_destroy = true
-  }
+  #  lifecycle {
+  #    prevent_destroy = true
+  #  }
 
   tags = local.common_tags
 }
